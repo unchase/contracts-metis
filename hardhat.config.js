@@ -41,10 +41,17 @@ module.exports = {
       accounts: [process.env.PRIVATE_KEY],
       gasMultiplier: 1
     },
+    metis_testnet: {
+      chainId: 599,
+      url: "https://goerli.gateway.metisdevops.link",
+      accounts: [process.env.PRIVATE_KEY],
+      gasMultiplier: 1
+    },
   },
   etherscan: {
     apiKey: {
       metis: process.env.METIS_API_KEY,
+      metis_testnet: process.env.METIS_API_KEY,
     },
     customChains: [
       {
@@ -53,6 +60,14 @@ module.exports = {
         urls: {
           apiURL: "https://andromeda-explorer.metis.io/api",
           browserURL: "https://andromeda-explorer.metis.io/",
+        },
+      },
+      {
+        network: "metis_testnet",
+        chainId: 599,
+        urls: {
+          apiURL: "https://goerli.explorer.metisdevops.link/api",
+          browserURL: "https://goerli.explorer.metisdevops.link/",
         },
       },
     ],
